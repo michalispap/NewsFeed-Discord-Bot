@@ -25,7 +25,7 @@ async def clear():
 @tasks.loop(seconds = 11)
 async def check():
     global feed
-    channel = bot.get_channel(paste_channel_ID_here) #paste_channel_ID_here = your server channel's ID (Developer Mode must be enabled on Discord)
+    channel = bot.get_channel(paste_channel_ID_here) #paste_channel_ID_here: your server channel's ID (Developer Mode must be enabled on Discord)
     d = feedparser.parse('https://www.thesun.co.uk/tech/rss')
     if (d.entries[0]['link'] not in feed):
         feed.append(d.entries[0]['link'])
